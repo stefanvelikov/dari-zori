@@ -1,3 +1,11 @@
 RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://dari-zori.eu/$1 [L,R]
+
+
+RewriteCond %{THE_REQUEST} \s/+(.*?/)?(?:index)?(.*?)\.html[\s?/] [NC]
+RewriteRule ^ /%1%2 [R=302,L,NE]
+
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
