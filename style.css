@@ -111,6 +111,12 @@ button,
 select {
   text-transform: none;
 }
+button,
+html input[type="button"],
+input[type="reset"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
 button[disabled],
 html input[disabled] {
   cursor: default;
@@ -370,10 +376,9 @@ fieldset {
   margin: 0;
   border: 0;
 }
-button,
-html input[type="button"],
-input[type="reset"] {
-  -webkit-appearance: button;
+[type="button"],
+[type="reset"],
+button {
   border: 0;
   cursor: pointer;
   -webkit-appearance: button;
@@ -436,6 +441,13 @@ input[type="reset"] {
 fieldset[disabled] .w-input,
 fieldset[disabled] .w-select {
   cursor: not-allowed;
+}
+.w-input[disabled]:not(.w-input-disabled),
+.w-input[readonly],
+.w-select[disabled]:not(.w-input-disabled),
+.w-select[readonly],
+fieldset[disabled]:not(.w-input-disabled) .w-input,
+fieldset[disabled]:not(.w-input-disabled) .w-select {
   background-color: #eee;
 }
 textarea.w-input,
@@ -1505,7 +1517,7 @@ textarea.w-select {
   opacity: 0.6;
 }
 .w-richtext figure div {
-  font-size: 0;
+  font-size: 0px;
   color: transparent;
 }
 .w-richtext figure.w-richtext-figure-type-image,
@@ -2062,6 +2074,7 @@ figcaption {
   border-style: none;
   background-color: #fdc339;
   color: #211b1f;
+  font-size: 1.125rem;
   font-weight: 600;
 }
 .button.paypal:hover {
@@ -3595,7 +3608,12 @@ figcaption {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  max-height: 60vh;
   max-width: 90%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 0%;
+  object-position: 50% 0%;
 }
 .news-inner_text-wrap {
   position: -webkit-sticky;
@@ -4527,6 +4545,9 @@ figcaption {
   grid-row-end: span 2;
 }
 #w-node-_226436d5-3132-01db-e26d-e61d5dc3da9f-88dbc153,
+#w-node-b2c3ef22-51f7-76ca-b783-bf78d2828506-a1f91690,
+#w-node-b2c3ef22-51f7-76ca-b783-bf78d2828509-a1f91690,
+#w-node-b2c3ef22-51f7-76ca-b783-bf78d282850c-a1f91690,
 #w-node-be5cdf55-a60b-37dc-b6ed-70b8202adfb3-2957571c,
 #w-node-be5cdf55-a60b-37dc-b6ed-70b8202adfb3-88dbc153,
 #w-node-be5cdf55-a60b-37dc-b6ed-70b8202adfb3-c6780ea8,
